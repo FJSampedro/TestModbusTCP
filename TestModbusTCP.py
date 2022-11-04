@@ -186,12 +186,12 @@ class TestMODBUSTCP():
         SERVER_PORT = int(self.ServerConfig["Port"].get())
         c = ModbusClient()
         #c.debug(True)
-        c.host(SERVER_HOST)
-        c.port(SERVER_PORT)
-        if not c.is_open():
+        c.host=SERVER_HOST
+        c.port=SERVER_PORT
+        if not c.is_open:
             if not c.open():
                 logging.info("unable to connect to "+SERVER_HOST+":"+str(SERVER_PORT))
-        if c.is_open():
+        if c.is_open:
             bits = c.read_coils(0, coils)
             if bits:
                 for i,b in enumerate(bits):
@@ -215,12 +215,12 @@ class TestMODBUSTCP():
         SERVER_PORT = int(self.ServerConfig["Port"].get())
         c = ModbusClient()
         #c.debug(True)
-        c.host(SERVER_HOST)
-        c.port(SERVER_PORT)
-        if not c.is_open():
+        c.host=SERVER_HOST
+        c.port=SERVER_PORT
+        if not c.is_open:
             if not c.open():
                 logging.info("unable to connect to "+SERVER_HOST+":"+str(SERVER_PORT))
-        if c.is_open():
+        if c.is_open:
             if self.coilList[coilNr]["bg"]!="Green":
                 is_ok = c.write_single_coil(coilNr, 1)
                 logging.info(self.coilList[coilNr]["bg"] + "  :  " + str(coilNr) + " : " + "True")
@@ -272,12 +272,12 @@ class TestMODBUSTCP():
         SERVER_PORT = int(self.ServerConfig["Port"].get())
         c = ModbusClient()
         #c.debug(True)
-        c.host(SERVER_HOST)
-        c.port(SERVER_PORT)
-        if not c.is_open():
+        c.host=SERVER_HOST
+        c.port=SERVER_PORT
+        if not c.is_open:
             if not c.open():
                 logging.info("unable to connect to "+SERVER_HOST+":"+str(SERVER_PORT))
-        if c.is_open():
+        if c.is_open:
             regs = c.read_holding_registers(0, registers)
             if regs:
                 for i,b in enumerate(regs):
@@ -299,12 +299,12 @@ class TestMODBUSTCP():
         SERVER_PORT = int(self.ServerConfig["Port"].get())
         c = ModbusClient()
         #c.debug(True)
-        c.host(SERVER_HOST)
-        c.port(SERVER_PORT)
-        if not c.is_open():
+        c.host=SERVER_HOST
+        c.port=SERVER_PORT
+        if not c.is_open:
             if not c.open():
                 logging.info("unable to connect to "+SERVER_HOST+":"+str(SERVER_PORT))
-        if c.is_open():
+        if c.is_open:
             is_ok=c.write_single_register(regNr, reg_value)
             if is_ok:
                 logging.info("register #" + str(regNr) + ": write success : " + str(reg_value))
@@ -351,12 +351,12 @@ class TestMODBUSTCP():
         SERVER_PORT = int(self.ServerConfig["Port"].get())
         c = ModbusClient()
         #c.debug(True)
-        c.host(SERVER_HOST)
-        c.port(SERVER_PORT)
-        if not c.is_open():
+        c.host=SERVER_HOST
+        c.port=SERVER_PORT
+        if not c.is_open:
             if not c.open():
                 logging.info("unable to connect to "+SERVER_HOST+":"+str(SERVER_PORT))
-        if c.is_open():
+        if c.is_open:
             regs = c.read_holding_registers(0, Floats*2)
             if regs:
                 regs= word_list_to_long(regs, big_endian=False)
@@ -381,12 +381,12 @@ class TestMODBUSTCP():
         SERVER_PORT = int(self.ServerConfig["Port"].get())
         c = ModbusClient()
         #c.debug(True)
-        c.host(SERVER_HOST)
-        c.port(SERVER_PORT)
-        if not c.is_open():
+        c.host=SERVER_HOST
+        c.port=SERVER_PORT
+        if not c.is_open:
             if not c.open():
                 logging.info("unable to connect to "+SERVER_HOST+":"+str(SERVER_PORT))
-        if c.is_open():
+        if c.is_open:
             is_ok=c.write_single_register(2*regNr, valuelist[0])
             is_ok=c.write_single_register(2*regNr+1, valuelist[1])
             if is_ok:

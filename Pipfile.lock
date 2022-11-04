@@ -1,0 +1,28 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "fc090a1c02e941edc3840c7dfe002b14bcae750188d3d3e34fb2718ebac2fd03"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.10"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "pymodbustcp": {
+            "hashes": [
+                "sha256:2eacea4f75e8899cf6bbbc74b933d531c1ffee071a1072ac29a7e470af3812fa"
+            ],
+            "index": "pypi",
+            "version": "==0.2.0"
+        }
+    },
+    "develop": {}
+}
